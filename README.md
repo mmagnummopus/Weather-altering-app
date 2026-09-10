@@ -114,4 +114,4 @@ City names are accepted in both Russian and English.
 
 ## Contact
 
-Written by **Timofey Vasilyev** — tima.yastreb07@gmail.com
+Written by **Timofey Vasilyev** — tvasilyevbusiness@gmail.com
