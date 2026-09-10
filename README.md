@@ -8,6 +8,20 @@ sky is actually doing outside.
 **Scope:** current conditions and a 15-hour forecast for any city, **28**
 weather themes and **99** wallpapers indexed in a local SQLite database.
 
+```mermaid
+flowchart LR
+    IN["City input<br/>Russian or English"] --> POG["pogoda.py"]
+    POG --> API["OpenWeatherMap"]
+    API --> TODAY["Weather_today<br/>temp · wind · humidity<br/>sunrise · sunset"]
+    API --> FC["Forecast<br/>5 steps × 3 hours"]
+    TODAY --> UI["Qt window"]
+    FC --> UI
+    TODAY --> THEME["change_theme<br/>season · hour<br/>condition · humidity"]
+    THEME --> DB[("data.sqlite3<br/>28 themes<br/>99 wallpapers")]
+    DB --> FILE["photo_img/"]
+    FILE --> DESK["Windows desktop"]
+```
+
 ---
 
 ## What's here
