@@ -1,4 +1,4 @@
-# Weather-altering-app — Desktop Weather Client & Wallpaper Changer
+# Weather-altering-app — Desktop Weather Client with Adaptive Wallpaper
 
 A PyQt5 desktop application that simplifies how weather information is
 perceived: it reads live conditions from OpenWeatherMap, shows them in a
@@ -66,7 +66,7 @@ with — the theme is derived from the conditions currently on screen.
 
 ## How the wallpaper is chosen
 
-Theme selection runs on four inputs, in this order:
+Theme selection runs on four inputs, in this order.
 
 **Season**, from the current month — winter (December-February), summer
 (June-August), or off-season (the remaining six months).
@@ -87,7 +87,7 @@ drawn at random from `oboi`, and the file is applied through the Windows
 
 ---
 
-## Requirements and platform
+## Requirements
 
 | | |
 |---|---|
@@ -96,23 +96,22 @@ drawn at random from `oboi`, and the file is applied through the Windows
 | **Platform** | Weather display is cross-platform; wallpaper switching is Windows-only |
 | **Network** | Requires access to `api.openweathermap.org` |
 
-The wallpaper call goes through `ctypes.windll`, which exists only on
-Windows. On Linux and macOS the two weather buttons work normally and the
-third one will not.
+## Notes
 
-The `photo_img/` directory is not tracked in this repository. The database
-stores filenames only, so the folder has to be present alongside `main.py`
-for wallpaper switching to resolve a path.
+**Wallpaper switching is Windows-only.** The call goes through
+`ctypes.windll`, which exists only on Windows. On Linux and macOS the two
+weather buttons work normally and the third one will not.
 
-## Interface language
+**The wallpaper files are not tracked here.** `data.sqlite3` stores
+filenames only, so `photo_img/` has to be present alongside `main.py` for
+the lookup to resolve to a real path.
 
-The application interface, the forecast descriptions returned by the API and
-the theme names in the database are all in Russian. City names are accepted
-in both Russian and English.
+**The interface is in Russian.** Button labels, the forecast descriptions
+returned by the API and the theme names in the database are all Russian.
+City names are accepted in both Russian and English.
 
 ---
 
 ## Contact
 
-Written by **Timofey Vasilyev**. Questions and additional explanations —
-tima.yastreb07@gmail.com
+Written by **Timofey Vasilyev** — tima.yastreb07@gmail.com
